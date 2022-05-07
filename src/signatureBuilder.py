@@ -29,10 +29,10 @@ def signature_Builder(name: str, title: str, date: str, body: str, lang: str) ->
     out = commentStyle[0]
 
     if title != '':
-        out += f'\n{title}\n'
+        out += f'\nTitle:{title}\n'
 
     if name != '':
-        out += f'written: {name}\n'
+        out += f'written By {name}\n'
 
     if body != '':
         out += body
