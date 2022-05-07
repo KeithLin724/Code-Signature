@@ -6,7 +6,7 @@ Date: 05/07/22
 '''
 
 from tkinter import *
-
+# IMPORT:
 from KY_Entry import kyEntry
 from DateTimeFrame import DateTimeFrame
 from signatureBuilder import signature_Builder, LANGUAGES_COMMENT
@@ -86,7 +86,7 @@ def main() -> None:
 
     buttonFrame.pack(side=BOTTOM)
 
-    # output frame
+    # NOTE:output frame
     outputFrame = Frame(window)
     # StringVar
     global langChoose
