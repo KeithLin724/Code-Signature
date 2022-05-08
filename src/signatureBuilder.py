@@ -32,7 +32,7 @@ def signature_Builder(name: str, title: str, date: str, body: str, lang: str) ->
         out += f'\nTitle:{title}\n'
 
     if name != '':
-        out += f'written By {name}\n'
+        out += f'Written By {name}\n'
 
     if body != '':
         out += body
