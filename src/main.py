@@ -10,6 +10,7 @@ from tkinter import *
 from KY_Entry import kyEntry
 from DateTimeFrame import DateTimeFrame
 from signatureBuilder import signature_Builder, LANGUAGES_COMMENT
+from ttkbootstrap import Style
 
 
 def build_signature() -> None:  # make signature
@@ -42,8 +43,13 @@ def clear_Text() -> None:  # cleat text
 
 
 def main() -> None:
+    global styleTheme
+    styleTheme = Style()
+    styleTheme = Style(theme='darkly')
     global window
-    window = Tk()
+    window = styleTheme.master
+
+    #window = Tk()
     window.title('Code Signature (Design by KYLiN)')
     #icon = PhotoImage(file='src\\photo\\icon.png')
     #window.iconphoto(True, icon)

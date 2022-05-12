@@ -15,7 +15,7 @@ LANGUAGES_COMMENT = {'C/C++': COMMENT_STYLES[0],
                      'Java': COMMENT_STYLES[0],
                      'Python': COMMENT_STYLES[1],
                      'Ruby': COMMENT_STYLES[2],
-                     'Golang': COMMENT_STYLES[1],
+                     'Golang': COMMENT_STYLES[0],
                      'Haskell': COMMENT_STYLES[3],
                      'Rust': COMMENT_STYLES[1],
                      'HTML': COMMENT_STYLES[4]}
