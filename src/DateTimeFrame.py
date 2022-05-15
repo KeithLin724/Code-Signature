@@ -5,7 +5,7 @@ This is a code build date and time display
 Date: 05/07/22
 '''
 
-from ttkbootstrap import *
+from ttkbootstrap import Frame, Label
 from ttkbootstrap.constants import LEFT
 from datetime import datetime as dt
 
@@ -21,8 +21,8 @@ class DateTimeFrame:
 
         self.Frame.pack()
 
-    # init the time reload
     def initTime(self) -> None:
+        'init the time reload'
         timeStr = dt.now()
         timeStr = timeStr.strftime('%x')
         self.showDateLabel.config(text=timeStr)

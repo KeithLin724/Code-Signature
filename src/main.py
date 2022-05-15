@@ -41,24 +41,15 @@ def clear_Text() -> None:  # cleat text
     bodyText.delete(1.0, END)
 
 
-# def out():  # debug
-#    print(langChoose.get())
-
-
 def main() -> None:
 
     global window
     window = Window(themename='darkly')  # Tk()
     window.iconbitmap(default='icon\icon.ico')
     window.iconbitmap('icon\icon.ico')
-    # windll.shcore.SetProcessDpiAwareness(1)
-    #ScaleFactor = windll.shcore.GetScaleFactorForDevice(0)
-    #window.tk.call('tk', 'scaling', ScaleFactor/75)
-    #styleTheme = Style(theme='darkly')
 
     window.title('Code Signature (Design by KYLiN)')
-    #icon = PhotoImage(file='src\\photo\\icon.png')
-    #window.iconphoto(True, icon)
+
     styleMain = ttk.Style()
     styleMain.configure('TLabel', font=("Cascadia Code", 12))
     styleMain.configure('TEntry', font=("Cascadia Code", 12))
@@ -124,8 +115,6 @@ def main() -> None:
     dateTimeOut = DateTimeFrame(outputFrame)
     dateTimeOut.initTime()
     outputFrame.pack(side=RIGHT)
-
-    #Button(window, text='debug', command=out).pack()
 
     # end of window loop
     window.mainloop()

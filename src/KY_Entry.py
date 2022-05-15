@@ -5,8 +5,8 @@ This is a code of Entry , using tkinter Entry and label
 Date: 05/07/22
 '''
 
-from tkinter import LAST, LEFT
-from tkinter.ttk import *
+from ttkbootstrap import Frame, Label, Entry
+from ttkbootstrap.constants import LEFT, END
 
 
 class kyEntry:
@@ -21,11 +21,9 @@ class kyEntry:
 
         self.__label = Label(self.__Frame,
                              text=entryName,
-                             width=20,
-                             style='TLabel').pack(side=LEFT)
+                             width=20).pack(side=LEFT)
         # entry
-        self.__entry = Entry(self.__Frame,
-                             style='TEntry')
+        self.__entry = Entry(self.__Frame)
         self.__entry.pack(side=LEFT)
 
         self.__Frame.pack()
@@ -36,4 +34,4 @@ class kyEntry:
 
     # clear screen
     def clear_entry(self) -> None:
-        self.__entry.delete(0, LAST)
+        self.__entry.delete(0, END)
