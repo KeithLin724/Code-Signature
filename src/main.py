@@ -5,12 +5,15 @@ This is a main code of "Code signature"
 Date: 05/07/22
 '''
 
-from tkinter import *
+
 # IMPORT:
+
+from ttkbootstrap import *
+import ttkbootstrap as ttk
+#import tkinter.ttk as ttk
 from KY_Entry import kyEntry
 from DateTimeFrame import DateTimeFrame
 from signatureBuilder import signature_Builder, LANGUAGES_COMMENT
-from ttkbootstrap import Style
 
 
 def build_signature() -> None:  # make signature
@@ -43,16 +46,23 @@ def clear_Text() -> None:  # cleat text
 
 
 def main() -> None:
-    global styleTheme
-    styleTheme = Style()
-    styleTheme = Style(theme='darkly')
-    global window
-    window = styleTheme.master
 
-    #window = Tk()
+    global window
+    window = Window(themename='darkly')  # Tk()
+    window.iconbitmap(default='icon\icon.ico')
+    window.iconbitmap('icon\icon.ico')
+    # windll.shcore.SetProcessDpiAwareness(1)
+    #ScaleFactor = windll.shcore.GetScaleFactorForDevice(0)
+    #window.tk.call('tk', 'scaling', ScaleFactor/75)
+    #styleTheme = Style(theme='darkly')
+
     window.title('Code Signature (Design by KYLiN)')
     #icon = PhotoImage(file='src\\photo\\icon.png')
     #window.iconphoto(True, icon)
+    styleMain = ttk.Style()
+    styleMain.configure('TLabel', font=("Cascadia Code", 12))
+    styleMain.configure('TEntry', font=("Cascadia Code", 12))
+    styleMain.configure('TButton', font=("Cascadia Code", 8))
 
     # user frame
     userFrame = Frame(window)
@@ -64,16 +74,15 @@ def main() -> None:
     clientTitle = kyEntry(entryName='Title: ', frame=userFrame)
 
     # body
-    bodyLabel = Label(userFrame,
-                      text='Body: ',
-                      font=('Arial', 12)).pack()
+    bodyLabel = Label(userFrame, text='Body: ').pack()
     global bodyText
     bodyText = Text(userFrame, height=30, width=30)
+    bodyText.configure(font=("Cascadia Code", 13))
     bodyText.pack()
 
     clearText = Button(userFrame,
-                       text='clear Body',
-                       width=8,
+                       text='Clear Body',
+                       width=10,
                        command=clear_Text).pack(side=BOTTOM)
 
     userFrame.pack(side=LEFT)
@@ -86,7 +95,7 @@ def main() -> None:
                               command=build_signature).pack()
 
     clearAll = Button(buttonFrame,  # NOTE: clear Text
-                      text='clear',
+                      text='Clear',
                       width=8,
                       command=clear_all).pack()
 
@@ -100,11 +109,15 @@ def main() -> None:
     langChoose = StringVar(outputFrame)
     langChoose.set(lang[0])
 
-    langChooseOptionMenu = OptionMenu(outputFrame, langChoose, *lang)
+    langChooseOptionMenu = OptionMenu(outputFrame,
+                                      langChoose,
+                                      *lang,
+                                      bootstyle="info-outline")
     langChooseOptionMenu.pack()
 
     global outSignatureText
     outSignatureText = Text(outputFrame)
+    outSignatureText.configure(font=("Cascadia Code", 13))
     outSignatureText.pack()
 
     global dateTimeOut

@@ -5,7 +5,8 @@ This is a code build date and time display
 Date: 05/07/22
 '''
 
-from tkinter import *
+from ttkbootstrap import *
+from ttkbootstrap.constants import LEFT
 from datetime import datetime as dt
 
 
@@ -14,8 +15,7 @@ class DateTimeFrame:
         self.Frame = Frame(frame)
 
         self.labelStr = Label(self.Frame,
-                              text='Date:',
-                              font=('Arial', 12)).pack(side=LEFT)
+                              text='Date:').pack(side=LEFT)
         self.showDateLabel = Label(self.Frame)
         self.showDateLabel.pack(side=LEFT)
 

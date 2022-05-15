@@ -5,20 +5,27 @@ This is a code of Entry , using tkinter Entry and label
 Date: 05/07/22
 '''
 
-from tkinter import *
+from tkinter import LAST, LEFT
+from tkinter.ttk import *
 
 
 class kyEntry:
     def __init__(self, frame, entryName: str) -> None:
 
         self.__Frame = Frame(frame)
+        # make style
+        #self.__style = Style()
+        #self.__style.configure('TLabel', font=("Cascadia Code", 12))
+        #self.__style.configure('TEntry', font=("Cascadia Code", 12))
         # label for display
+
         self.__label = Label(self.__Frame,
                              text=entryName,
                              width=20,
-                             font=('Arial', 12)).pack(side=LEFT)
+                             style='TLabel').pack(side=LEFT)
         # entry
-        self.__entry = Entry(self.__Frame)
+        self.__entry = Entry(self.__Frame,
+                             style='TEntry')
         self.__entry.pack(side=LEFT)
 
         self.__Frame.pack()
@@ -29,4 +36,4 @@ class kyEntry:
 
     # clear screen
     def clear_entry(self) -> None:
-        self.__entry.delete(0, END)
+        self.__entry.delete(0, LAST)
