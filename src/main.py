@@ -10,7 +10,7 @@ Date: 05/07/22
 
 from ttkbootstrap import *
 import ttkbootstrap as ttk
-#import tkinter.ttk as ttk
+
 from KY_Entry import kyEntry
 from DateTimeFrame import DateTimeFrame
 from signatureBuilder import signature_Builder, LANGUAGES_COMMENT
